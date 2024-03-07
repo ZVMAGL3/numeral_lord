@@ -1,0 +1,24 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": -4160462220371685454
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -2858574500482496170
+  },
+  "m_Name": "",
+  "Background": {
+    "m_FileID": 0,
+    "m_PathID": -6021826158794294251
+  },
+  "Template": {
+    "m_FileID": 0,
+    "m_PathID": -4670346788398901762
+  },
+  "MySelf": {
+    "m_FileID": 0,
+    "m_PathID": -4274218254087582398
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 3038954750648899641
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 3713877921873027309
+  },
+  "m_Name": "",
+  "PlayerIcon": {
+    "m_FileID": 0,
+    "m_PathID": -8204597836949843415
+  },
+  "PlayerName": {
+    "m_FileID": 0,
+    "m_PathID": -5712150371599247886
+  },
+  "Power": {
+    "m_FileID": 0,
+    "m_PathID": -5814600119158866525
+  },
+  "Score": {
+    "m_FileID": 0,
+    "m_PathID": 2032769618129495070
+  }
+}

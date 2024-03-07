@@ -1,0 +1,76 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 7404999215168305756
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 7973873203687283012
+  },
+  "m_Name": "",
+  "Title": {
+    "m_FileID": 0,
+    "m_PathID": -8230265809856194058
+  },
+  "Reset": {
+    "m_FileID": 0,
+    "m_PathID": 5676716569849802470
+  },
+  "OverallTitle": {
+    "m_FileID": 0,
+    "m_PathID": 6054655668872529091
+  },
+  "Tabs": [
+    {
+      "m_FileID": 0,
+      "m_PathID": -6107675942172737375
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -3331027109413263328
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -2550172613070305573
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -4886483934385457882
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -8696322308801602452
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 292646090731161620
+    }
+  ],
+  "Panels": [
+    {
+      "m_FileID": 0,
+      "m_PathID": -2725248247095500314
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 4952314772146412075
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 1500323730620417908
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -5653038947150815775
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 9166998450063601733
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -1915997944454097289
+    }
+  ]
+}

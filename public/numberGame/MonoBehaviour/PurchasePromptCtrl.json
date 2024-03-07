@@ -1,0 +1,36 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": -821077602624677362
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -5750580914925534564
+  },
+  "m_Name": "",
+  "Title": {
+    "m_FileID": 0,
+    "m_PathID": 10483770071366150
+  },
+  "Photo": {
+    "m_FileID": 0,
+    "m_PathID": 2768711871166982161
+  },
+  "Coin": {
+    "m_FileID": 0,
+    "m_PathID": -5732671698061085239
+  },
+  "Price": {
+    "m_FileID": 0,
+    "m_PathID": 5892664707855488571
+  },
+  "Tips": {
+    "m_FileID": 0,
+    "m_PathID": 996041270910824572
+  },
+  "Checked": {
+    "m_FileID": 0,
+    "m_PathID": 3441842944396521354
+  }
+}

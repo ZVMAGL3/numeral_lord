@@ -1,0 +1,32 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": -743704907640732079
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 9147430777785655121
+  },
+  "m_Name": "",
+  "Host": {
+    "m_FileID": 0,
+    "m_PathID": 3226249496118742567
+  },
+  "Style": {
+    "m_FileID": 0,
+    "m_PathID": 1224566285644088137
+  },
+  "Name": {
+    "m_FileID": 0,
+    "m_PathID": -1761242655960852266
+  },
+  "Automator": {
+    "m_FileID": 0,
+    "m_PathID": 2822625095906094119
+  },
+  "Team": {
+    "m_FileID": 0,
+    "m_PathID": 3821726977015469170
+  }
+}

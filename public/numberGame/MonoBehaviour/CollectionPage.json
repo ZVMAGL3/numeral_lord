@@ -1,0 +1,36 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": -7239093537418281748
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -2218717383088281923
+  },
+  "m_Name": "",
+  "Title": {
+    "m_FileID": 0,
+    "m_PathID": 1976084597674108386
+  },
+  "MyCoin": {
+    "m_FileID": 0,
+    "m_PathID": -4438099169612944777
+  },
+  "TileStyleItemTemplate": {
+    "m_FileID": 0,
+    "m_PathID": 723854003557927880
+  },
+  "Parent": {
+    "m_FileID": 0,
+    "m_PathID": 5148385839455285572
+  },
+  "Divide": {
+    "m_FileID": 0,
+    "m_PathID": 1095167688765410400
+  },
+  "DivideText": {
+    "m_FileID": 0,
+    "m_PathID": -517074770117342292
+  }
+}

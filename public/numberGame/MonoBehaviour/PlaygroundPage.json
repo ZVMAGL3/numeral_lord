@@ -1,0 +1,24 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": -7580608930407573857
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 2535086634850579063
+  },
+  "m_Name": "",
+  "Title": {
+    "m_FileID": 0,
+    "m_PathID": 8174333340508053011
+  },
+  "MyCoin": {
+    "m_FileID": 0,
+    "m_PathID": 3550802178635674047
+  },
+  "ItemTemplate": {
+    "m_FileID": 0,
+    "m_PathID": 2549787624891570261
+  }
+}

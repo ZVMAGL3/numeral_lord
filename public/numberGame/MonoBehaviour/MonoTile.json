@@ -1,0 +1,28 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": -1428452486686211073
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -5600745613470485538
+  },
+  "m_Name": "",
+  "Terrain": {
+    "m_FileID": 0,
+    "m_PathID": 9168408997867431711
+  },
+  "Style": {
+    "m_FileID": 0,
+    "m_PathID": -3886982236785961206
+  },
+  "Power": {
+    "m_FileID": 0,
+    "m_PathID": -145588768171621658
+  },
+  "Construct": {
+    "m_FileID": 0,
+    "m_PathID": 611683857711426508
+  }
+}

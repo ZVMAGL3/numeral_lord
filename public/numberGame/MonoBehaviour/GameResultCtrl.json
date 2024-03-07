@@ -1,0 +1,92 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 4342258661009107407
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -3627380094871047817
+  },
+  "m_Name": "",
+  "Title": {
+    "m_FileID": 0,
+    "m_PathID": 8182993503964621266
+  },
+  "Icon": {
+    "m_FileID": 0,
+    "m_PathID": 4645936008452280617
+  },
+  "Mode": {
+    "m_FileID": 0,
+    "m_PathID": 5076179996878989234
+  },
+  "Size": {
+    "m_FileID": 0,
+    "m_PathID": -6128513515557646577
+  },
+  "Grade": {
+    "m_FileID": 0,
+    "m_PathID": 2336221683528292599
+  },
+  "Round": {
+    "m_FileID": 0,
+    "m_PathID": -7046808519326533485
+  },
+  "GraphBoard": {
+    "m_FileID": 0,
+    "m_PathID": 3043823531735260651
+  },
+  "GraphItem": {
+    "m_FileID": 0,
+    "m_PathID": 1817441613937470109
+  },
+  "Score": {
+    "m_FileID": 0,
+    "m_PathID": -9099484897798710169
+  },
+  "ScoreLabel": {
+    "m_FileID": 0,
+    "m_PathID": 7138748334875406580
+  },
+  "NewHighestScore": {
+    "m_FileID": 0,
+    "m_PathID": -4597063391016432617
+  },
+  "ScoreDetail": {
+    "m_FileID": 0,
+    "m_PathID": -8316193664240466064
+  },
+  "Coin": {
+    "m_FileID": 0,
+    "m_PathID": -445742864879733900
+  },
+  "CoinLabel": {
+    "m_FileID": 0,
+    "m_PathID": -8225046707464561652
+  },
+  "VideoButton": {
+    "m_FileID": 0,
+    "m_PathID": 6371774716887420021
+  },
+  "DoubleCoinReward": {
+    "m_FileID": 0,
+    "m_PathID": -8484849215021766328
+  },
+  "LeaderboardText": {
+    "m_FileID": 0,
+    "m_PathID": 3086437749061634406
+  },
+  "Version": {
+    "m_FileID": 0,
+    "m_PathID": -8916594274260253916
+  },
+  "ItemInfo": {
+    "m_FileID": 0,
+    "m_PathID": 6536491725570630254
+  },
+  "ItemInfoText": {
+    "m_FileID": 0,
+    "m_PathID": -1638159050082585150
+  }
+}

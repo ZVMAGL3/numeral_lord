@@ -1,0 +1,136 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": -7774989937409217391
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 1826386265194339935
+  },
+  "m_Name": "",
+  "Title": {
+    "m_FileID": 0,
+    "m_PathID": -8367532831542995457
+  },
+  "DataStringButton": {
+    "m_FileID": 0,
+    "m_PathID": -1293350941269374983
+  },
+  "PlayerTeamButton": {
+    "m_FileID": 0,
+    "m_PathID": -2509855037351121027
+  },
+  "RenameIcon": {
+    "m_FileID": 0,
+    "m_PathID": 4660953361266854040
+  },
+  "Author": {
+    "m_FileID": 0,
+    "m_PathID": 2588761375794087561
+  },
+  "MaxPlayers": {
+    "m_FileID": 0,
+    "m_PathID": -5361826110115726666
+  },
+  "MapCol": {
+    "m_FileID": 0,
+    "m_PathID": 1816747345096206050
+  },
+  "MapRow": {
+    "m_FileID": 0,
+    "m_PathID": 3583208292219716997
+  },
+  "Cylinder": {
+    "m_FileID": 0,
+    "m_PathID": 2311470793516172147
+  },
+  "RandomSeat": {
+    "m_FileID": 0,
+    "m_PathID": -5606661254390697541
+  },
+  "HasFog": {
+    "m_FileID": 0,
+    "m_PathID": 819040588571751008
+  },
+  "DefaultTileType": {
+    "m_FileID": 0,
+    "m_PathID": -118240696460603049
+  },
+  "DeleteButton": {
+    "m_FileID": 0,
+    "m_PathID": 1024605411214987691
+  },
+  "TestButton": {
+    "m_FileID": 0,
+    "m_PathID": 2132202026333924631
+  },
+  "MaxPlayersLabel": {
+    "m_FileID": 0,
+    "m_PathID": 5131182195297886163
+  },
+  "MapSizeLabel": {
+    "m_FileID": 0,
+    "m_PathID": -6279528297031423622
+  },
+  "CylinderLabel": {
+    "m_FileID": 0,
+    "m_PathID": -6914345566458442440
+  },
+  "RandomSeatLabel": {
+    "m_FileID": 0,
+    "m_PathID": -1945752024167989142
+  },
+  "HasFogLabel": {
+    "m_FileID": 0,
+    "m_PathID": 4557602788062656518
+  },
+  "DefaultTileTypeLabel": {
+    "m_FileID": 0,
+    "m_PathID": -1580790754577606544
+  },
+  "TestLabel": {
+    "m_FileID": 0,
+    "m_PathID": 7516527012941940470
+  },
+  "CopyLabel": {
+    "m_FileID": 0,
+    "m_PathID": -6986084746252683623
+  },
+  "PasteLabel": {
+    "m_FileID": 0,
+    "m_PathID": 8037152423199386104
+  },
+  "FieldDetail": {
+    "m_FileID": 0,
+    "m_PathID": 6143972146785046440
+  },
+  "FieldDetailText": {
+    "m_FileID": 0,
+    "m_PathID": -5404561331130463087
+  },
+  "EnterButton": {
+    "m_FileID": 0,
+    "m_PathID": 5845089306291210826
+  },
+  "ExitButton": {
+    "m_FileID": 0,
+    "m_PathID": 564588461515044006
+  },
+  "DataStringPanel": {
+    "m_FileID": 0,
+    "m_PathID": -2271752377808999682
+  },
+  "DataString": {
+    "m_FileID": 0,
+    "m_PathID": -441397161510183452
+  },
+  "PlayerTeamPanel": {
+    "m_FileID": 0,
+    "m_PathID": -3082306564340557151
+  },
+  "PCTemplate": {
+    "m_FileID": 0,
+    "m_PathID": -4052999160270722191
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 3843519501229679111
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -6346430600214344638
+  },
+  "m_Name": "",
+  "Ladder": "",
+  "PlayFabId": "",
+  "Rank": 0,
+  "Frame": {
+    "m_FileID": 0,
+    "m_PathID": 2845832987003481639
+  },
+  "No": {
+    "m_FileID": 0,
+    "m_PathID": 1601497275164649370
+  },
+  "Username": {
+    "m_FileID": 0,
+    "m_PathID": 3694740838537980765
+  },
+  "Score": {
+    "m_FileID": 0,
+    "m_PathID": -3257938966240988586
+  },
+  "Replay": {
+    "m_FileID": 0,
+    "m_PathID": -8619243230223359206
+  }
+}

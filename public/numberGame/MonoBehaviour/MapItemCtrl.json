@@ -1,0 +1,40 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": -5688584744316651070
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -2103291722255907649
+  },
+  "m_Name": "",
+  "Icon": {
+    "m_FileID": 0,
+    "m_PathID": -3068477341385461519
+  },
+  "Name": {
+    "m_FileID": 0,
+    "m_PathID": -1649077048989931163
+  },
+  "Desc": {
+    "m_FileID": 0,
+    "m_PathID": 7148772180570169896
+  },
+  "UnlockMask": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "UnlockRequire": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "UnlockConfirmPanel": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "UnlockConfirm": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  }
+}

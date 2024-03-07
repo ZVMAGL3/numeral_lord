@@ -1,0 +1,64 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 5671679834731091386
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -7193202548181611275
+  },
+  "m_Name": "",
+  "Rank": {
+    "m_FileID": 0,
+    "m_PathID": -8406922936828674626
+  },
+  "Username": {
+    "m_FileID": 0,
+    "m_PathID": 3855192492017889399
+  },
+  "Date": {
+    "m_FileID": 0,
+    "m_PathID": 4445926383341664629
+  },
+  "Icon": {
+    "m_FileID": 0,
+    "m_PathID": 697782346353779324
+  },
+  "Mode": {
+    "m_FileID": 0,
+    "m_PathID": -3913877919130044818
+  },
+  "Size": {
+    "m_FileID": 0,
+    "m_PathID": -7359432991003715492
+  },
+  "Grade": {
+    "m_FileID": 0,
+    "m_PathID": 6329481156992366524
+  },
+  "Round": {
+    "m_FileID": 0,
+    "m_PathID": -8832753142129038609
+  },
+  "GraphBoard": {
+    "m_FileID": 0,
+    "m_PathID": -6638150271233404427
+  },
+  "GraphItem": {
+    "m_FileID": 0,
+    "m_PathID": -7376693071363974479
+  },
+  "Score": {
+    "m_FileID": 0,
+    "m_PathID": 5047638072831493413
+  },
+  "Replay": {
+    "m_FileID": 0,
+    "m_PathID": 5756403406160277693
+  },
+  "OldVersion": {
+    "m_FileID": 0,
+    "m_PathID": -8268796407937598944
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 3897049033587775100
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 4524257021347553217
+  },
+  "m_Name": "",
+  "Title": {
+    "m_FileID": 0,
+    "m_PathID": 3548074267496039823
+  },
+  "Icon": {
+    "m_FileID": 0,
+    "m_PathID": 8692862484607767974
+  },
+  "Mode": {
+    "m_FileID": 0,
+    "m_PathID": -2532917155364517266
+  },
+  "Size": {
+    "m_FileID": 0,
+    "m_PathID": -2463450588769369762
+  },
+  "Grade": {
+    "m_FileID": 0,
+    "m_PathID": 1434209105278388849
+  },
+  "Round": {
+    "m_FileID": 0,
+    "m_PathID": -1664867157080486965
+  },
+  "Power": {
+    "m_FileID": 0,
+    "m_PathID": -9173386201176742371
+  },
+  "Score": {
+    "m_FileID": 0,
+    "m_PathID": -6937433949070567529
+  },
+  "Template": {
+    "m_FileID": 0,
+    "m_PathID": -5831455781580895203
+  },
+  "SurrenderButton": {
+    "m_FileID": 0,
+    "m_PathID": 2364826538458035556
+  }
+}
