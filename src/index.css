@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'CustomFont1';
-  src: url('http://localhost:5173/numberGame/Font/DFYuanW7-GB2312 #5881.ttf') format('truetype');
+  src: url('http://localhost:5173/numberGame/Font/DFYuanW7-GB2312.ttf') format('truetype');
   /* 添加其他字体格式和路径，以便在不同浏览器和设备上兼容 */
 }
 
@@ -17,7 +17,7 @@
 }
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'CustomFont1', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

@@ -13,6 +13,7 @@ export default {
         inactivate: new Set([]), //本回合失去行动力
         player_name:['玩家一','玩家二'], //玩家昵称，开始游戏时传递过来，下标对应行动编号
         player_num:2, //玩家数量
+        player_ico:['TS1001.png','TS1002.png'], //玩家图标 (后续要后端控制玩家编号)
         actioning: 0, //当前行动的玩家编号
         team:[], //玩家所属队伍 下标对应队伍
         troop: [new Set([0]),new Set([1])], //下标为队伍,内部为队伍对应的玩家编号
@@ -54,10 +55,20 @@ export default {
         },
         //修改积分
         reviseFraction(state,array){
-            state.fraction[array[0]] = state.fraction[array[0]] + array[1]
+            state.fraction[array[0]] += array[1]
         },
         //修改士兵
         reviseSoldiers(state,chessman){
+            const oldContingent = state.soldiers[chessman[0]].contingent
+            const oldDots = state.soldiers[chessman[0]].dots
+            if(chessman[1].contingent >= 0){
+                state.fraction[chessman[1].contingent] += chessman[1].dots
+            }
+            if(oldContingent >= 0){
+                state.fraction[oldContingent] -= oldDots
+            }
+            console.log(state.fraction,chessman[1].dots,oldContingent)
+
             state.soldiers[chessman[0]] = chessman[1]
         },
         reviseSoldiersDots(state,chessman){
@@ -86,6 +97,7 @@ export default {
         },
     },
     actions: {
+
         //初始化
         initialization(context){
             const json = context.state.json
@@ -102,10 +114,10 @@ export default {
             context.commit('replaceAll',['roundScore',new Array(json.team.length).fill(0)])
 
             json.soldiers.forEach(item => {
-                context.commit('reviseArray',['soldiers',item[0],{'contingent':item[1],'dots':item[2]}])
+                context.commit('reviseSoldiers',[item[0],{'contingent':item[1],'dots':item[2]}])
                 context.commit('addSet',['abbreviatedChessboard',item[0]])
                 context.commit('addSet',['specialForces',item[0]]) //将目标地添加到断电兵中
-                context.commit('reviseFraction',[item[1],item[2]]) //初始化积分
+                // context.commit('reviseFraction',[item[1],item[2]]) //初始化积分
             });
 
             for (let index = 0; index < json.terrain.length; index++) {
@@ -123,24 +135,27 @@ export default {
             context.commit('replaceAll',['process',0])
             context.dispatch('startRound',0)
         },
+
         //开始回合
         startRound(context,actioning){
+            console.log(actioning)
             const player_num = context.state.player_num //玩家数量
             const score = context.state.score //存储的点数
             const roundScore = context.state.roundScore //回合点数
             
             while(roundScore[actioning % player_num]  === 0){
-                actioning = actioning + 1
+                actioning = (actioning + 1) % player_num
             }
 
             context.commit('replaceAll',['actioning',actioning])
-            actioning = actioning % player_num
+
             //计算可以加点的数量
             context.commit('reviseArray',['score',actioning,score[actioning]+roundScore[actioning]]) //开始计算下回合的加点
             context.commit('replaceAll',['process',0])
             
             context.dispatch('reviseCombatUnit',actioning)
         },
+
         //战斗单位
         reviseCombatUnit(context,team){
             const soldiers = context.state.soldiers
@@ -238,7 +253,7 @@ export default {
             //判定目标地是否失活
             function judgeInactivate(myTroop,eating,powerOutage){
                 console.log(soldier1.dots)
-                if((tileCode1 === 'O' && tileCode2 === 'M') || (soldier1.dots === 1) || (eating && powerOutage)){
+                if((tileCode1 === 'O' && (tileCode2 === 'M' || tileCode2 === 'S')) || (soldier1.dots === 1) || (eating && powerOutage)){
                     console.log(123)
                     context.commit('addSet',['inactivate',index])
                 }else{
@@ -260,7 +275,7 @@ export default {
                     context.commit('unSet',['abbreviatedChessboard',selected[0]]) //删除临时棋盘中的出发地下标
                     context.commit('unSet',['specialForces',selected[0]]) //删除断电兵中的自己
                 }else{
-                    context.commit('reviseSoldiersDots',[(selected[0]),1]) //更新路径地块
+                    context.commit('reviseSoldiers',[selected[0],{'contingent':actioning,'dots':1}]) //更新路径地块
                 }
             }
 
@@ -361,7 +376,7 @@ export default {
                         if(!item){
                             list1[index].forEach(idx => {
                                 if(soldiers[idx].dots > 1){
-                                    context.commit('reviseSoldiersDots',[idx,soldiers[idx].dots - 1]) //点数减一
+                                    context.commit('reviseSoldiers',[idx,{'contingent':soldiers[idx].contingent,'dots':soldiers[idx].dots - 1}]) //点数减一
                                     context.commit('addSet',['specialForces',idx]) //将目标地添加到断电兵中
                                 }else{
                                     context.commit('reviseSoldiers',[idx,{'contingent':-1,'dots':0}]) //删除点数等于一
@@ -379,16 +394,16 @@ export default {
             
             //主程序
             if(isPassableTile(tileCode2)){ //判断点击的方块是否为可操作的地块
-                if(selected.length){
-                    soldier1 = soldiers[selected[0]]
-                    let dost1 = soldier1.dots
+                if(selected.length){ //判断是否有选中的棋子
+                    soldier1 = soldiers[selected[0]] //获取选中的棋子对象
+                    let dost1 = soldier1.dots //获取选中棋子的大小
                     let aroundSelected = around(selected[0],long,tileCodeString.length) //返回附近格子的下标v
                     context.commit('clearArray','selected') //不管什么情况,都去掉选中状态
 
-                    //!!!删除附近格子的选中状态
+                    //!!!删除附近格子的选中状态??
 
                     //情况一,点击的是空地,情况二,点击的是敌军,情况三,点击的是友军非战斗单位,情况四,点击的是友军的战斗单位,情况五,点击的是自己√,情况六,是否为阻挡
-                    if(aroundSelected.includes(index)){
+                    if(aroundSelected.includes(index)){ //是否点击的是附近的格子
                         const myTroop = troop[team[soldier1.contingent]] //行动者的队伍
                         if(myTroop.has(soldiers[index].contingent)){ //是否为友军
                             addSelected()
@@ -405,7 +420,8 @@ export default {
                                         
                                         //棋子死亡事件
                                         soldiersDie(index,soldier2.contingent)
-    
+                                        //更新出发地
+                                        renewDeparture(true)
                                         if(dost1 - dost2 > 1){ //前进
                                             context.commit('reviseSoldiers',[index,{'contingent':actioning,'dots':(dost1 - dost2 - 1)}]) //更新目标地
                                             //更新到达后的状态
@@ -416,16 +432,13 @@ export default {
                                             playSound(3)
                                         }
 
-                                        //更新出发地
-                                        renewDeparture(true)
-
                                     }else{ //未消灭,破防
                                         //棋子死亡事件
                                         soldiersDie(selected[0],soldier1.contingent)
                                         if(tileCode2 !== 'S'){
                                             context.commit('addSet',['inactivate',index]) //目标地失活/破防
                                         }
-                                        context.commit('reviseSoldiersDots',[index,dost2 - dost1 + 1]) //更新目标地块
+                                        context.commit('reviseSoldiers',[index,{'contingent':soldier2.contingent,'dots':dost2 - dost1 + 1}]) //更新目标地块
                                         //音效
                                         playSound(3)                                        
                                     }
@@ -441,7 +454,7 @@ export default {
                                         updateArrives(myTroop,true)
                                     }else{ //未消灭
                                         context.commit('addSet',['inactivate',selected[0]]) //出发地失活
-                                        context.commit('reviseSoldiersDots',[index,dost2 - dost1 + 1]) //更新目标地块
+                                        context.commit('reviseSoldiers',[index,{'contingent':soldier2.contingent,'dots':dost2 - dost1 + 1}]) //更新目标地块
                                         //音效
                                         playSound(3)
                                     }
@@ -449,10 +462,10 @@ export default {
                             }else{ //空地
                                 //更新目标地
                                 context.commit('reviseSoldiers',[index,{'contingent':actioning,'dots':(dost1-1?dost1-1:1)}])
-                                //更新到达后的状态
-                                updateArrives(myTroop,false)
                                 //更新出发地
                                 renewDeparture(true)
+                                //更新到达后的状态
+                                updateArrives(myTroop,false)
                             }
 
                             //重新渲染战斗单位
@@ -494,14 +507,13 @@ export default {
             if(isPassableTile(tileCode)){
                 if(soldiers[index].contingent === actioning){
                     if(!specialForces.has(index)){
-                        context.commit('reviseSoldiersDots',[index,soldiers[index].dots + 1])
+                        context.commit('reviseSoldiers',[index,{'contingent':actioning,'dots':soldiers[index].dots + 1}])
                         context.commit('reviseArray',['score',actioning,score[actioning]-1])
-                        context.commit('reviseFraction',[actioning,1])
                         context.dispatch('reviseCombatUnit',actioning)
                         playSound(0)
                         if(!score[actioning]){
                             console.log('加点回合结束')
-                            context.dispatch('startRound',actioning+1)
+                            context.dispatch('startRound',(actioning+1)%player_num)
                         }
                     }else{
                         console.log('断电兵不能加点')
@@ -512,8 +524,6 @@ export default {
             }else{
                 console.log('当前地块不可操作')
             }
-
-
 
         },
 
@@ -534,6 +544,7 @@ export default {
                 }
             })
         },
+
         reviseRoundScore(context,array){
             context.commit('reviseRoundScore',array)
             if(array[1] === 0){
@@ -566,6 +577,7 @@ export default {
                 }
             }
         }
+        
 	},
 }
 

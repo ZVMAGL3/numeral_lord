@@ -10,7 +10,7 @@
         </div>
     </div>
     <div class="top">
-        123
+        <round_points/>
     </div>
     <div class="middle">
         <roleData/>
@@ -24,6 +24,7 @@
     import { computed } from 'vue'
     import battlefield from '/src/components/map/battlefield.vue'
     import roleData from '/src/components/map/roleData.vue'
+    import round_points from '/src/components/map/round_points.vue'
     import map from '/src/hooks/map.js'
     import positioning from '/src/hooks/positioning.js'
     const {checkerboardSize} = map()
@@ -49,7 +50,6 @@
     }
 
     .top{
-        background-color: red;
         position: absolute;
         left: 50%;
         top: 0;
@@ -57,16 +57,10 @@
     }
 
     .middle{
-        background-color: red;
         position: absolute;
         left: 0;
         top: 50%;
         transform: translate(0%,-50%);
-        width:6vw;
-        min-width: 50px;
-        max-width: 200px;
-        display: flex;
-        flex-direction: column;
     }
 
     .buttom{

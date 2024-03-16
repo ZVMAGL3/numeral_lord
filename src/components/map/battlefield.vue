@@ -15,7 +15,7 @@
             <img 
                 v-if="chessman.dots>0" 
                 class="chessman" 
-                :src="`numberGame/Sprite/TS${1001+chessman.contingent}.png`"
+                :src="`numberGame/Sprite/${player_ico[chessman.contingent]}`"
                 :style="specialForces.has(index)?'height:60px;':''"
             />
 
@@ -44,7 +44,7 @@
     
     const store = useStore()
 
-    const { soldiers,tileCodeString,selected,specialForces,process,player_num,actioning } = useMapState('map', ['soldiers','tileCodeString','selected','specialForces','process','player_num','actioning']);
+    const { soldiers,tileCodeString,selected,specialForces,process,player_ico,actioning } = useMapState('map', ['soldiers','tileCodeString','selected','specialForces','process','player_ico','actioning']);
 
     // 地块编码的图片路径
     const tileCodeToImagePath = {
