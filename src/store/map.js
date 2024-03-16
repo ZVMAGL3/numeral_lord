@@ -328,6 +328,7 @@ export default {
                     let len = electrifiedAround_filtered.length - (tileCodeString[subscript] === 'S'?0:1)
                     let list1 = [] //[new Set([])]
                     let list2 = [] //[true,false]
+                    
                     function breadthFirst(idx,serial){                     
                         list1[serial].add(idx) //向自己列表添加自己
                         let Selected = around(idx,long,tileCodeString.length) //返回附近格子的下标
