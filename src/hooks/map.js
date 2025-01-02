@@ -5,8 +5,8 @@ export default function(){
     const { tileCodeString, long, specialForces, combatUnitAll } = useMapState('map', ['tileCodeString', 'long', 'specialForces', 'combatUnitAll']);
     
     // 定义边长和sqrt(3)常量
-    const sideLength = 41.2;
-    const sqrt_3 = Math.sqrt(3);
+    const sideLength = 41.5;
+    const sqrt_3 = 1.7320508075688772;
 
     // 计算棋盘长度和高度
     const len = computed(() => tileCodeString.value.length);

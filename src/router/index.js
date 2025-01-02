@@ -33,6 +33,11 @@ const router = createRouter({
             component:() => import('/src/pages/mapEdit/mapEdit.vue')
         },
         {
+            path:'/map_exit',
+            name:'map_exit',
+            component:() => import('/src/pages/mapEdit/map_exit.vue')
+        },
+        {
             path:'/gameRoom',
             name:'gameRoom',
             component:() => import('/src/pages/mapEdit/gameRoom.vue')

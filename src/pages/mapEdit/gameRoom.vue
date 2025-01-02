@@ -16,23 +16,35 @@
         <roleData/>
     </div>
     <div class="buttom">
-        789
+        <actionTips/>
     </div>
 </template>
 
 <script setup>
-    import { computed } from 'vue'
+    import { computed,onMounted } from 'vue'
     import battlefield from '/src/components/map/battlefield.vue'
+    import actionTips from '/src/components/map/actionTips.vue'
     import roleData from '/src/components/map/roleData.vue'
     import round_points from '/src/components/map/round_points.vue'
     import map from '/src/hooks/map.js'
     import positioning from '/src/hooks/positioning.js'
+    // import { storeToRefs } from 'pinia'
+    // import readyRoom from '/src/stores/readyRoom.js'
+    import { useStore } from 'vuex'
+    // const { } = storeToRefs(readyRoom())
+    const store = useStore()
     const {checkerboardSize} = map()
     const {coordinate,mousedown,mousemove,mouseup} = positioning()
 
     let style = computed(()=>{
         return `${checkerboardSize.value}${coordinate.value}`
     })
+    
+    onMounted(()=>{
+        //初始化
+        store.dispatch('map/initialization')
+    })
+
 </script>
 
 <style scoped>
@@ -64,7 +76,6 @@
     }
 
     .buttom{
-        background-color: red;
         position: absolute;
         left: 50%;
         top: 100%;

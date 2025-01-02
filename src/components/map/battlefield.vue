@@ -74,11 +74,6 @@
         }
     }
 
-    onMounted(()=>{
-        //初始化
-        store.dispatch('map/initialization')
-    })
-
 </script>
 
 <style scoped>

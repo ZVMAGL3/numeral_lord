@@ -2,7 +2,7 @@ export default {
     namespaced: true,
     //数据存储
     state: () => ({
-        tileCodeString: "",
+        tileCodeString: new Array(3969).fill('O'),
         long: 0,
         soldiers:[], //战棋分布,index(下标)--坐标,contingent--玩家编号,dots--点数
         abbreviatedChessboard: new Set([]), //只有存在棋子格子的下标
@@ -47,32 +47,32 @@ export default {
     mutations: {
         //指定替换
         replaceAll(state,array){
-            state[array[0]] = array[1]
+            state[array[0]] = array[1];
         },
         //修改回合加分
         reviseRoundScore(state,array){
-            state.roundScore[array[0]] = array[1]
+            state.roundScore[array[0]] = array[1];
         },
         //修改积分
         reviseFraction(state,array){
-            state.fraction[array[0]] += array[1]
+            state.fraction[array[0]] += array[1];
         },
         //修改士兵
         reviseSoldiers(state,chessman){
-            const oldContingent = state.soldiers[chessman[0]].contingent
-            const oldDots = state.soldiers[chessman[0]].dots
+            const oldContingent = state.soldiers[chessman[0]].contingent;
+            const oldDots = state.soldiers[chessman[0]].dots;
             if(chessman[1].contingent >= 0){
-                state.fraction[chessman[1].contingent] += chessman[1].dots
+                state.fraction[chessman[1].contingent] += chessman[1].dots;
             }
             if(oldContingent >= 0){
-                state.fraction[oldContingent] -= oldDots
+                state.fraction[oldContingent] -= oldDots;
             }
-            console.log(state.fraction,chessman[1].dots,oldContingent)
+            // state.fraction_input;
 
-            state.soldiers[chessman[0]] = chessman[1]
+            state.soldiers[chessman[0]] = chessman[1];
         },
         reviseSoldiersDots(state,chessman){
-            state.soldiers[chessman[0]].dots = chessman[1]
+            state.soldiers[chessman[0]].dots = chessman[1];
         },
         //Set类型的属性,添加元素
         addSet(state,array){
@@ -101,10 +101,10 @@ export default {
         //初始化
         initialization(context){
             const json = context.state.json
-            context.commit('replaceAll',["tileCodeString",json.terrain])
-            context.commit('replaceAll',["long",json.width])
-            context.commit('replaceAll',["team",json.team])
-            context.commit('replaceAll',["fraction",new Array(json.player_num).fill(0)])
+            context.commit('replaceAll',["tileCodeString",json.terrain.split('')]);
+            context.commit('replaceAll',["long",json.width]);
+            context.commit('replaceAll',["team",json.team]);
+            context.commit('replaceAll',["fraction",new Array(json.player_num).fill(0)]);
             
             const defaultValue = {'contingent':-1, 'dots': 0}; //初始化地块
             const myArray = new Array(json.terrain.length).fill(defaultValue);
@@ -136,6 +136,15 @@ export default {
             context.dispatch('startRound',0)
         },
 
+        //编辑初始化
+        edit_initialization(context){
+            const json = context.state.json
+            
+            const defaultValue = {'contingent':-1, 'dots': 0}; //初始化地块
+            const myArray = new Array(context.state.tileCodeString.length).fill(defaultValue);
+            context.commit('replaceAll',['soldiers',myArray]) 
+        },
+
         //开始回合
         startRound(context,actioning){
             console.log(actioning)
@@ -164,7 +173,6 @@ export default {
             const long = context.state.long;
             const inactivate = context.state.inactivate
             const specialForces = context.state.specialForces
-            const process = context.state.process
 
             context.commit('clearSet','combatUnit')
             context.commit('clearSet','combatUnitAll')
@@ -192,12 +200,18 @@ export default {
                 }
             })
             
-            const combatUnit = context.state.combatUnit
+            const combatUnit = context.state.combatUnit;
+            const process = context.state.process;
             if(!combatUnit.size && !process){
-                console.log('结束回合')
-                context.commit('replaceAll',['process',1])
-                context.commit('clearSet','inactivate')
+                context.dispatch('endBattleRound');
             }
+        },
+
+        endBattleRound(context){ //结束战斗回合
+            console.log('结束回合');
+            context.commit('replaceAll',['process',1]);
+            context.commit('replaceAll',['selected',[]]);
+            context.commit('clearSet','inactivate');
         },
         
         //处理点击事件(战斗回合)
@@ -513,19 +527,25 @@ export default {
                         context.dispatch('reviseCombatUnit',actioning)
                         playSound(0)
                         if(!score[actioning]){
-                            console.log('加点回合结束')
-                            context.dispatch('startRound',(actioning+1)%player_num)
+                            context.dispatch('endPointAllocation');
                         }
                     }else{
-                        console.log('断电兵不能加点')
+                        console.log('断电兵不能加点');
                     }
                 }else{
-                    console.log('这不是你能加点的部队')
+                    console.log('这不是你能加点的部队');
                 }
             }else{
-                console.log('当前地块不可操作')
+                console.log('当前地块不可操作');
             }
 
+        },
+        
+        endPointAllocation(context){ //结束加点回合
+            console.log('加点回合结束');
+            const player_num = context.state.player_num;
+            const actioning = context.state.actioning; //当前行动的队伍编号
+            context.dispatch('startRound',(actioning+1)%player_num)
         },
 
         //连通事件
